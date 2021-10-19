@@ -1,6 +1,6 @@
 # Reference from:
 # https://github.com/c-bata/go-prompt/blob/master/.github/workflows/test.yml
-name: tests
+name: Test
 on:
   pull_request:
     branches:
