@@ -1,5 +1,6 @@
 FROM golang:1.17 AS builder
 
+SHELL ["/bin/bash", "-c"]
 ADD . /app/
 WORKDIR /app/
 
