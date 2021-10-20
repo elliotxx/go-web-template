@@ -1,11 +1,10 @@
 FROM golang:1.17 AS builder
 
-SHELL ["/bin/bash", "-c"]
 ADD . /app/
 WORKDIR /app/
 
-RUN go mod tidy
-RUN go build -o standard-sample-go-web ./cmd
+RUN ["/bin/bash", "-c", "go mod tidy"]
+RUN ["/bin/bash", "-c", "go build -o standard-sample-go-web ./cmd"]
 
 
 FROM ubuntu:18.04 AS runtime
