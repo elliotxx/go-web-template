@@ -3,7 +3,6 @@ FROM golang:1.17 AS builder
 ADD . /app/
 WORKDIR /app/
 
-ENV GOPROXY=https://goproxy.cn,direct
 RUN go mod tidy
 RUN go build -o standard-sample-go-web ./cmd
 
