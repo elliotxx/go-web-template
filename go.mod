@@ -1,4 +1,4 @@
-module github.com/elliotxx/standard-sample-go-web
+module github.com/elliotxx/go-web-prototype
 
 go 1.16
 
