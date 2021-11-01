@@ -24,7 +24,7 @@ checksum:
 snapshot:
   name_template: "{{ .Tag }}-next"
 changelog:
-  sort: asc
+  sort: desc
   filters:
     exclude:
       - '^docs:'
@@ -48,8 +48,8 @@ dockers:
 - image_templates:
   - 'elliotxx/{{ .ProjectName }}:{{ .Tag }}'
   - 'elliotxx/{{ .ProjectName }}:latest'
-  - 'ghcr.io/elliotxx/{{ .ProjectName }}:{{ .Tag }}'
-  - 'ghcr.io/elliotxx/{{ .ProjectName }}:latest'
+  # - 'ghcr.io/elliotxx/{{ .ProjectName }}:{{ .Tag }}'
+  # - 'ghcr.io/elliotxx/{{ .ProjectName }}:latest'
   dockerfile: Dockerfile
   use: docker
   build_flag_templates:
@@ -62,7 +62,7 @@ dockers:
   - "--platform=linux/amd64"
 - image_templates:
   - 'elliotxx/{{ .ProjectName }}:{{ .Tag }}-arm64'
-  - 'ghcr.io/elliotxx/{{ .ProjectName }}:{{ .Tag }}-arm64'
+  # - 'ghcr.io/elliotxx/{{ .ProjectName }}:{{ .Tag }}-arm64'
   dockerfile: Dockerfile
   use: docker
   build_flag_templates:
