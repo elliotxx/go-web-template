@@ -52,4 +52,4 @@ jobs:
         env:
           GO111MODULE: on
           GOPATH: /home/runner/work/
-        run: GOCILINT=./golangci-lint-1.31.0-linux-amd64/golangci-lint make lint
+        run: make lint
