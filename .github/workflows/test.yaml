@@ -27,7 +27,7 @@ jobs:
     - name: Running go tests with coverage
       env:
         GO111MODULE: on
-      run: make test-with-coverage
+      run: make cover
     - name: Send coverage
       uses: shogo82148/actions-goveralls@v1
       with:
