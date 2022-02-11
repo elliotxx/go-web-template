@@ -1,3 +1,6 @@
+# go.mk is a Go project general Makefile, encapsulated some common Target.
+# Project repository: https://github.com/elliotxx/go-makefile
+
 APPROOT     		?= $(shell basename $(PWD))
 GOPKG       		?= $(shell go list 2>/dev/null)
 GOPKGS      		?= $(shell go list ./... 2>/dev/null)
@@ -19,7 +22,7 @@ GOLINTER_VERSION	?= v1.41.0
 .DEFAULT_GOAL := help
 .PHONY: help
 help:  ## This help message :)
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' go.makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' go.mk | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 

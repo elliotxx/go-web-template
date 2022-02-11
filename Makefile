@@ -1,6 +1,6 @@
 GOSOURCE_PATHS ?= ./cmd/...
 
-include go.makefile
+include go.mk
 
 
 .PHONY: clean
