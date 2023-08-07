@@ -9,7 +9,7 @@ builds:
       - CGO_ENABLED=0
     goos:
       - linux
-      - windows
+      # - windows
       - darwin
     # 使用 ldflags="-s -w" 去掉符号表和调试信息，以减少发布包的大小
     ldflags:
