@@ -1,4 +1,4 @@
-module github.com/elliotxx/go-web-prototype
+module github.com/elliotxx/go-web-template
 
 go 1.16
 

@@ -1,10 +1,10 @@
 ## Introduction
 
 
-[![GitHub release](https://img.shields.io/github/release/elliotxx/go-web-prototype.svg)](https://github.com/elliotxx/go-web-prototype/releases)
-[![Github All Releases](https://img.shields.io/github/downloads/elliotxx/go-web-prototype/total.svg)](https://github.com/elliotxx/go-web-prototype/releases)
-[![license](https://img.shields.io/github/license/elliotxx/go-web-prototype.svg)](https://github.com/elliotxx/go-web-prototype/blob/master/LICENSE)
-[![Coverage Status](https://coveralls.io/repos/github/elliotxx/go-web-prototype/badge.svg)](https://coveralls.io/github/elliotxx/go-web-prototype)
+[![GitHub release](https://img.shields.io/github/release/elliotxx/go-web-template.svg)](https://github.com/elliotxx/go-web-template/releases)
+[![Github All Releases](https://img.shields.io/github/downloads/elliotxx/go-web-template/total.svg)](https://github.com/elliotxx/go-web-template/releases)
+[![license](https://img.shields.io/github/license/elliotxx/go-web-template.svg)](https://github.com/elliotxx/go-web-template/blob/master/LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/elliotxx/go-web-template/badge.svg)](https://coveralls.io/github/elliotxx/go-web-template)
 
 > This is a web application with go and gin.
 
@@ -30,7 +30,7 @@ pong
 Local build:
 ```
 $ make build-all
-$ ./build/darwin/go-web-prototype
+$ ./build/darwin/go-web-template
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.

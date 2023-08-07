@@ -44,12 +44,12 @@ changelog:
 release:
   github:
     owner: elliotxx
-    name: go-web-prototype
+    name: go-web-template
   draft: false
   footer: |
     ## Docker Images
-    * `elliotxx/go-web-prototype:{{ .Tag }}`
-    * `elliotxx/go-web-prototype:{{ .Tag }}-arm64`
+    * `elliotxx/go-web-template:{{ .Tag }}`
+    * `elliotxx/go-web-template:{{ .Tag }}-arm64`
 
     ## Thanks!
 
