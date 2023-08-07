@@ -1,0 +1,20 @@
+network:
+  requestTimeout: 30s
+logging:
+  enableLoggingToFile: true
+  loggingDirectory: "logs"
+  logLevel: "debug"
+  dumpCurrentConfig: true
+  reportCaller: true
+  textPretty: false
+  jsonPretty: true
+  disableText: true
+database:
+  dbPort: 3306
+  dbPassword: app123
+  dbName: "appdb"
+  dbUser: "app"
+  dbHost: "127.0.0.1"
+  autoMigrate: true
+  migrateFile: ./assets/sql/app.sql
+

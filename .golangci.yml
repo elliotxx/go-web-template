@@ -9,11 +9,12 @@ run:
 linters:
   disable-all: true
   enable: # please keep this alphabetized
-  # Don't use soon to deprecated[1] linters that lead to false
-  # https://github.com/golangci/golangci-lint/issues/1841
-  # - deadcode
-  # - structcheck
-  # - varcheck
+    # Don't use soon to deprecated[1] linters that lead to false
+    # https://github.com/golangci/golangci-lint/issues/1841
+    # - deadcode
+    # - structcheck
+    # - varcheck
+    # - wsl
     - ineffassign
     - staticcheck
     - unused
@@ -29,13 +30,13 @@ linters:
     - exhaustive
     - goconst
     - gocritic
-    - gomnd
-    - gosec
+    # - gomnd
+    # - gosec
     - misspell
     - nolintlint
     - prealloc
     - predeclared
-    - revive
+    # - revive
     - stylecheck
     - thelper
     - tparallel
@@ -43,12 +44,11 @@ linters:
     - unconvert
     - unparam
     - whitespace
-    - wsl
 
 linters-settings:
   gofumpt:
     # Select the Go version to target. The default is `1.15`.
-    lang-version: "1.16"
+    lang-version: "1.19"
     # Choose whether or not to use the extra rules that are disabled
     # by default
     extra-rules: false

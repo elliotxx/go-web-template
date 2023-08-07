@@ -1,0 +1,314 @@
+definitions:
+  entity.SystemConfig:
+    properties:
+      config:
+        description: Configuration data in JSON or YAML format
+        type: string
+      createdAt:
+        description: Timestamp when the system was created
+        type: string
+      creator:
+        description: Username or ID of the user who created the system
+        type: string
+      description:
+        description: Description or purpose of the system
+        type: string
+      env:
+        description: Environment where the system is deployed (e.g. prod, gray)
+        type: string
+      id:
+        description: Unique ID of the system
+        type: integer
+      modifier:
+        description: Username or ID of the user who last modified the system
+        type: string
+      tenant:
+        description: Tenant or organization that the system belongs to
+        type: string
+      type:
+        description: Type or category of the system (e.g. cache, message queue)
+        type: string
+      updatedAt:
+        description: Timestamp when the system was last updated
+        type: string
+    type: object
+  systemconfig.CreateSystemConfigRequest:
+    properties:
+      config:
+        description: Configuration data in JSON or YAML format
+        type: string
+      creator:
+        description: Username or ID of the user who created the system
+        type: string
+      description:
+        description: Description or purpose of the system
+        type: string
+      env:
+        description: Environment where the system is deployed (e.g. prod, gray)
+        type: string
+      modifier:
+        description: Username or ID of the user who last modified the system
+        type: string
+      tenant:
+        description: Tenant or organization that the system belongs to
+        type: string
+      type:
+        description: Type or category of the system (e.g. cache, message queue)
+        type: string
+    required:
+    - config
+    - creator
+    - env
+    - tenant
+    - type
+    type: object
+  systemconfig.QuerySystemConfigRequest:
+    properties:
+      keyword:
+        description: |-
+          Keyword is the keyword to search for.
+          Optional: true
+        type: string
+      page:
+        description: |-
+          Page is the page number, starting from 1.
+          Required: true, Minimum value: 1
+        minimum: 1
+        type: integer
+      perPage:
+        description: |-
+          PerPage is the number of items per page.
+          Required: true, Minimum value: 1, Maximum value: 300
+        maximum: 300
+        minimum: 1
+        type: integer
+    required:
+    - page
+    - perPage
+    type: object
+  systemconfig.UpdateSystemConfigRequest:
+    properties:
+      config:
+        description: Configuration data in JSON or YAML format
+        type: string
+      creator:
+        description: Username or ID of the user who created the system
+        type: string
+      description:
+        description: Description or purpose of the system
+        type: string
+      env:
+        description: Environment where the system is deployed (e.g. prod, gray)
+        type: string
+      id:
+        description: Unique ID of the system
+        type: integer
+      modifier:
+        description: Username or ID of the user who last modified the system
+        type: string
+      tenant:
+        description: Tenant or organization that the system belongs to
+        type: string
+      type:
+        description: Type or category of the system (e.g. cache, message queue)
+        type: string
+    required:
+    - id
+    type: object
+info:
+  contact: {}
+paths:
+  /api/v1/systemconfig:
+    post:
+      consumes:
+      - application/json
+      description: Create a new system config instance
+      parameters:
+      - description: Created system config
+        in: body
+        name: config
+        required: true
+        schema:
+          $ref: '#/definitions/systemconfig.CreateSystemConfigRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/entity.SystemConfig'
+        "400":
+          description: Bad Request
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "429":
+          description: Too Many Requests
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Create system config
+    put:
+      consumes:
+      - application/json
+      description: Update the specified system config
+      parameters:
+      - description: Updated system config
+        in: body
+        name: config
+        required: true
+        schema:
+          $ref: '#/definitions/systemconfig.UpdateSystemConfigRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/entity.SystemConfig'
+        "400":
+          description: Bad Request
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "429":
+          description: Too Many Requests
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Update system config
+  /api/v1/systemconfig/{id}:
+    delete:
+      description: Delete specified system config by ID
+      parameters:
+      - description: SystemConfig ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/entity.SystemConfig'
+        "400":
+          description: Bad Request
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "429":
+          description: Too Many Requests
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Delete system config
+    get:
+      description: Get system config information by system config ID
+      parameters:
+      - description: SystemConfig ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/entity.SystemConfig'
+        "400":
+          description: Bad Request
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "429":
+          description: Too Many Requests
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Get system config
+  /api/v1/systemconfig/count:
+    get:
+      description: Count the total number of system configs
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/entity.SystemConfig'
+        "400":
+          description: Bad Request
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "429":
+          description: Too Many Requests
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Count system configs
+  /api/v1/systemconfigs:
+    get:
+      consumes:
+      - application/json
+      description: Find system configs with query
+      parameters:
+      - description: query body
+        in: body
+        name: query
+        required: true
+        schema:
+          $ref: '#/definitions/systemconfig.QuerySystemConfigRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/entity.SystemConfig'
+        "400":
+          description: Bad Request
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "429":
+          description: Too Many Requests
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Find system configs
+swagger: "2.0"

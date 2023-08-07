@@ -1,4 +1,10 @@
 dist/
 build/
+_build/
 coverage.out
 tmp/
+*.log
+log/
+__debug_bin
+.vscode/
+.idea/
